@@ -40,6 +40,14 @@ $hotels = [
 
 ];
 
+foreach ($hotels as $hotel) {
+    //var_dump($hotel);
+    foreach($hotel as $key => $value) {
+        // var_dump($key);
+        //var_dump($value);
+    }
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -49,47 +57,30 @@ $hotels = [
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.css' integrity='sha512-bR79Bg78Wmn33N5nvkEyg66hNg+xF/Q8NA8YABbj+4sBngYhv9P8eum19hdjYcY7vXk/vRkhM3v/ZndtgEXRWw==' crossorigin='anonymous'/>
-    <title>Document</title>
+    <title>PHP Hotel</title>
 </head>
 <body>
 
-    <div class="container">
+    <div class="container my-5">
 
         <table class="table">
-
             <thead>
                 <tr>
-                <th scope="col">#</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Handle</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Descrizione</th>
+                <th scope="col">Parcheggio</th>
+                <th scope="col">Stelle</th>
+                <th scope="col">Distanza dal centro</th>
                 </tr>
             </thead>
-
             <tbody>
-
                 <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
                 </tr>
-
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                </tr>
-
-                <tr>
-                    <th scope="row">3</th>
-                    <td colspan="2">Larry the Bird</td>
-                    <td>@twitter</td>
-                </tr>
-
             </tbody>
-
         </table>
 
     </div>
