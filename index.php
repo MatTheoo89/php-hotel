@@ -58,29 +58,52 @@ foreach ($hotels as $hotel) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.css' integrity='sha512-bR79Bg78Wmn33N5nvkEyg66hNg+xF/Q8NA8YABbj+4sBngYhv9P8eum19hdjYcY7vXk/vRkhM3v/ZndtgEXRWw==' crossorigin='anonymous'/>
     <title>PHP Hotel</title>
+    <style>
+        td:first-child{
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
 
     <div class="container my-5">
 
-        <table class="table">
+        <table class="table table-striped">
+
             <thead>
+
                 <tr>
-                <th scope="col">Nome</th>
-                <th scope="col">Descrizione</th>
-                <th scope="col">Parcheggio</th>
-                <th scope="col">Stelle</th>
-                <th scope="col">Distanza dal centro</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Descrizione</th>
+                    <th scope="col">Parcheggio</th>
+                    <th scope="col">Stelle</th>
+                    <th scope="col">Distanza dal centro</th>
                 </tr>
             </thead>
-            <tbody>
-                <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-                </tr>
+
+            <tbody class="table-group-divider">
+
+                <!-- Ciclo l'array multi e mi esport il singolo -->
+                <?php foreach ($hotels as $hotel):?>
+                    
+                    <tr>
+                        
+                        <!-- Ciclo  il singolo e mi esporto la key e il valore-->
+                        <?php foreach ($hotel as $key => $value):?>
+
+                            <!-- SE il valore del park è true mi stampi SÌ altrimenti NO -->
+                        <?php if($key === 'parking') { $value === true ? $value = 'SÌ' : $value = 'NO'; }?>
+
+                        <td><?php echo $value?></td>
+
+                        <? endforeach; ?>
+
+                    </tr>
+
+                <? endforeach; ?>
+
             </tbody>
+
         </table>
 
     </div>
