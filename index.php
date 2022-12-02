@@ -121,25 +121,16 @@ $hotels = [
             </thead>
 
             <tbody class="table-group-divider">
-
-                <!-- Ciclo l'array multi e mi esport il singolo -->
-                <?php foreach ($hotels as $hotel):?>
-                    
-                    <tr>
-                        
-                        <!-- Ciclo  il singolo e mi esporto la key e il valore-->
-                        <?php foreach ($hotel as $key => $value):?>
-
-                            <!-- SE il valore del park è true mi stampi SÌ altrimenti NO -->
-                        <?php if($key === 'parking') { $value === true ? $value = 'SÌ' : $value = 'NO'; }?>
-
-                        <td><?php echo $value?></td>
-
-                        <? endforeach; ?>
-
+                <tr>
+                    <?php foreach( $hotels as $hotel ) :?>
+                        <td><?php echo $hotel['name']?></td>
+                        <td><?php echo $hotel['description']?></td>
+                        <td><?php echo $hotel['parking'] ? 'SÌ' : 'NO'?></td>
+                        <td><?php echo $hotel['vote']?></td>
+                        <td><?php echo $hotel['distance_to_center']?></td>
                     </tr>
+                    <?php endforeach;?>
 
-                <? endforeach; ?>
 
             </tbody>
 
